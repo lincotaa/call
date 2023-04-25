@@ -1,13 +1,13 @@
-package fr.agregio.template;
+package fr.agregio.call;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TemplateApplication {
+public class CallApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TemplateApplication.class, args);
+		SpringApplication.run(CallApplication.class, args);
 	}
 
 }

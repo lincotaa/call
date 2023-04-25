@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fr.agregio</groupId>
-	<artifactId>template</artifactId>
+	<artifactId>call</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>template</name>
 	<description>Template for microservice implementation</description>
