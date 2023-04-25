@@ -1,10 +1,10 @@
-package fr.agregio.template;
+package fr.agregio.call;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TemplateApplicationTests {
+class CallApplicationTests {
 
 	@Test
 	void contextLoads() {
