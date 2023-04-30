@@ -1,6 +1,15 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost/postgresql/call;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
+    url: jdbc:postgresql://localhost:5432/call?autoReconnect=true;DB_CLOSE_ON_EXIT=FALSE
     username: callForTendersApp
     password: 6d65e77fbe8f
     driverClassName: org.PostGreSQL.Driver
+  jpa:
+    database: postgresql
+    showSql: true
+    generateDdl: true
+    hibernate:
+      ddlAuto: update
+    properties:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      formatSql: true
