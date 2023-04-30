@@ -14,7 +14,7 @@ Download the last release onto your machine, then run:
 ```
 java -jar CallApplication_0.0.1-SNAPSHOT.jar -Pdev
 ```
-Or clone the repository locally, checkout to the "dev" branch then run:
+Or clone the repository locally, checkout to the "feature/call_for_tenders" branch then run:
 ```
 mvn package
 ```
