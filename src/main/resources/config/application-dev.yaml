@@ -4,3 +4,8 @@ spring:
     username: call
     password: test
     driverClassName: org.h2.Driver
+
+logging:
+  level:
+    root: WARN
+    fr.agregio: TRACE

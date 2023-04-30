@@ -13,3 +13,8 @@ spring:
     properties:
       dialect: org.hibernate.dialect.PostgreSQLDialect
       formatSql: true
+
+logging:
+  level:
+    root: WARN
+    fr.agregio: INFO

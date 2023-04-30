@@ -5,7 +5,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 )
 @RestController
 @RequestMapping("/v1")
-public interface ProducerController {
+public interface ProductionGroupController {
 
     /**
      * Creating a new GroupOfProduction entity
-     * @param producer the group of production to be created, without an id specified
+     * @param productionGroupDTO the group of production to be created, without an id specified
      * @return the persisted GroupOfProduction entity
      */
     //TODO add correct JSON body formatting to description
@@ -41,10 +40,10 @@ public interface ProducerController {
             tags = "producer"
     )
     @ApiResponses (value = {
-            @ApiResponse(responseCode = "201", description = "Producer created."),
+            @ApiResponse(responseCode = "201", description = "Group of production created."),
             @ApiResponse(responseCode = "400", description = "Bad request.")
     })
-    @Secured({"ROLE_ADMIN"})
+//    @Secured({"ROLE_ADMIN"})
     @PostMapping("/producers")
-    ResponseEntity<ProducerDTO> create(@Valid @RequestBody ProducerDTO producer);
+    ResponseEntity<ProductionGroupDTO> create(@Valid @RequestBody ProductionGroupDTO productionGroupDTO);
 }
