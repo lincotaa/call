@@ -44,6 +44,3 @@ the [RTE DATA API](https://data.rte-france.com/).
 ![alt text](https://github.com/lincotaa/call/blob/feature/call_for_tenders/src/main/resources/images/global_architecture.png?raw=true)
 #### Sequence diagram
 ![alt text](https://github.com/lincotaa/call/blob/feature/call_for_tenders/src/main/resources/images/sequence_diagram.png?raw=true)
-
-
-``java -jar CallApplication.jar``
