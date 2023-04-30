@@ -30,7 +30,7 @@ As the Demo is expected to run with a simple JVM, H2 database is used for the de
 For the "prod" profile, a local PostGreSQL instance is required (version 10+).
 
 Demo-version 0.0.1 classes diagram:
-https://github.com/lincotaa/call/tree/main/src/main/resources/images/call_service_classes_diagram.png?raw=true)
+https://github.com/lincotaa/call/blob/feature/call_for_tenders/src/main/resources/images/call_service_classes_diagram.png?raw=true)
 
 ### Target
 #### Global architecture
@@ -41,10 +41,9 @@ At least, 4 other services are needed:
 - The RTE Service to retrieve the PP1/PP2 signals and Wholesale Market information the day before the fact from 
 the [RTE DATA API](https://data.rte-france.com/).
 
-![alt text](https://github.com/lincotaa/call/tree/main/src/main/resources/images/global_architecture.png?raw=true)
+![alt text](https://github.com/lincotaa/call/blob/feature/call_for_tenders/src/main/resources/images/global_architecture.png?raw=true)
 #### Sequence diagram
-![alt text](https://github.com/lincotaa/call/tree/main/src/main/resources/images/sequence_diagram.png?raw=true)
+![alt text](https://github.com/lincotaa/call/blob/feature/call_for_tenders/src/main/resources/images/sequence_diagram.png?raw=true)
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 ``java -jar CallApplication.jar``
