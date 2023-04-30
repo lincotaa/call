@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fr.agregio</groupId>
-	<artifactId>callapp</artifactId>
+	<artifactId>call</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Call for tenders Application</name>
 	<description>Web Service for call for tenders submission on frequency reserves containment and restauration</description>

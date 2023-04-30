@@ -6,7 +6,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@MappedSuperclass
 public class Block {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
