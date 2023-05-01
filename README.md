@@ -8,7 +8,7 @@ Please have a JVM of Java 17 Temurin installed onto your machine prior to runnin
 If you don't have it yet, you can download the correct version for your OS from 
 [Adoptium Website](https://adoptium.net/temurin/releases/).
 
-When running the "prod" profile, please ensure you have a PostgreSQL service up and running on your
+When running the "prod" profile, please ensure you have a PostgreSQL (version>=15.2) service up and running on your
 computer, on the default port 5432.
 
 
@@ -37,7 +37,7 @@ to a certain list of ROLEs are commented out.
 
 #### Data Storage
 As the Demo is expected to run with a simple JVM, H2 database is used for the demo profile "dev". 
-For the "prod" profile, a local PostGreSQL instance is required (version>=15.2).
+For the "prod" profile, a local PostGreSQL instance is required.
 
 #### Class Diagram of the Demo Version
 Here comes the Demo class diagram:
