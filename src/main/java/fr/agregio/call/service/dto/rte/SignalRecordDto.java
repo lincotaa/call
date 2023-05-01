@@ -1,4 +1,4 @@
-package fr.agregio.call.model.dto.rte;
+package fr.agregio.call.service.dto.rte;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

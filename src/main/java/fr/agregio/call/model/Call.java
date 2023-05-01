@@ -36,9 +36,9 @@ public class Call {
     private List<BlockReserve> blockReserves = new ArrayList<>();
 
     @Transient
-    private List<BlockReserve> aggregatedBlockReserves;
+    private List<BlockReserve> aggregatedBlockReserves = new ArrayList<>();
 
     @Transient
-    private List<List<BlockReserve>> detailedBlockReserves;
+    private List<BlockReserve> detailedBlockReserves = new ArrayList<>();
 
 }

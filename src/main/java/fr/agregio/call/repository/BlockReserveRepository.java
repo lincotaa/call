@@ -11,8 +11,8 @@ import java.util.List;
 public interface BlockReserveRepository extends JpaRepository<BlockReserve, Long> {
 
     //List all Power Blocks corresponding to the call where productionGroup is not NULL (i.e. detailed traceability)
-    @Query("select b from BlockReserve b where b.call.id = ?1 and b.productionGroup = ?2")
-    List<BlockReserve> findByCall_IdAndProductionGroup(@NonNull Long id, @NonNull ProductionGroup productionGroup);
+    @Query("select b from BlockReserve b where b.call.id = ?1 and b.productionGroup is not null")
+    List<BlockReserve> findByCall_IdAndProductionGroupNotNull(@NonNull Long id);
 
     //List all Power Blocks corresponding to the call where productionGroup is NULL (i.e. aggregated block for step)
     @Query("select b from BlockReserve b where b.call.id = ?1 and b.productionGroup is null")

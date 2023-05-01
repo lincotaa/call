@@ -2,6 +2,7 @@ package fr.agregio.call.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +16,10 @@ import org.hibernate.type.SqlTypes;
 @Getter
 @Setter
 @Entity
-@Table(name = "block_producer")
+@Table(name = "block_producer", indexes = {
+        @Index(name = "idx_day", columnList = "day"),
+        @Index(name = "idx_step", columnList = "step")
+})
 public class BlockProducer extends Block {
     @Column(name = "total_power", nullable = false)
     @JdbcTypeCode(SqlTypes.DOUBLE)

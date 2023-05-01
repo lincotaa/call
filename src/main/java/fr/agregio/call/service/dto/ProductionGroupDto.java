@@ -1,6 +1,5 @@
-package fr.agregio.call.model.dto;
+package fr.agregio.call.service.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import fr.agregio.call.model.enums.ProductionType;
 import lombok.AllArgsConstructor;
@@ -18,4 +17,8 @@ public class ProductionGroupDto {
     private ProductionType productionType;
     private Double productionCost;
     private PowerAgreementDto powerAgreement;
+
+    public boolean hasId() {
+        return id != null;
+    }
 }

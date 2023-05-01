@@ -1,4 +1,4 @@
-package fr.agregio.call.model.dto;
+package fr.agregio.call.service.dto;
 
 import fr.agregio.call.model.enums.Step;
 import lombok.AllArgsConstructor;

@@ -25,8 +25,7 @@ public interface BlockProducerRepository extends JpaRepository<BlockProducer, Lo
     List<BlockProducer> findByDay(@NonNull String day);
 
     //List all Power Supply for the corresponding day and step
-    List<BlockProducer> findByDayAndStep(@NonNull String day,
-                                         Step step);
+    List<BlockProducer> findByDayAndStep(@NonNull String day, Step step);
 
     // Purging old blocks after a while
     long deleteByDay(@NonNull String day);

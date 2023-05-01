@@ -20,7 +20,9 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "production_group")
+@Table(name = "production_group", indexes = {
+        @Index(name = "idx_production_type", columnList = "production_type")
+})
 public class ProductionGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

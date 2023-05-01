@@ -1,4 +1,4 @@
-package fr.agregio.call.model.dto.rte;
+package fr.agregio.call.service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class MarketTomorrowDto {
-    private SignalsDto signals;
-    private FrancePowerExchangesDto exchanges;
+public class ReserveDto {
+    private Long id;
+    private String description;
 }

@@ -1,6 +1,6 @@
 package fr.agregio.call.model;
 
-import fr.agregio.call.model.dto.rte.MarketTomorrowDto;
+import fr.agregio.call.service.dto.rte.MarketTomorrowDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +14,11 @@ import org.hibernate.type.SqlTypes;
 @Getter
 @Setter
 @Entity
-@Table(name = "block_reserve")
+@Table(name = "block_reserve", indexes = {
+        @Index(name = "idx_day", columnList = "day"),
+        @Index(name = "idx_step", columnList = "step"),
+        @Index(name = "idx_call", columnList = "call")
+        })
 public class BlockReserve extends Block {
     @Column(name = "bottom_price", nullable = false)
     @JdbcTypeCode(SqlTypes.VARCHAR)

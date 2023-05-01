@@ -1,4 +1,4 @@
-package fr.agregio.call.model.dto;
+package fr.agregio.call.service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ReserveDto {
-    private Long id;
-    private String description;
+public class PowerAgreementDto {
+    private Double minPower;
+    private Double maxPower;
 }
