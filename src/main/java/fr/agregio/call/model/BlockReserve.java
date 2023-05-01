@@ -16,13 +16,13 @@ import org.hibernate.type.SqlTypes;
 @Entity
 @Table(name = "block_reserve")
 public class BlockReserve extends Block {
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "reserve_id", nullable = false)
-    private Reserve reserve;
-
     @Column(name = "bottom_price", nullable = false)
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private Double bottomPrice;
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "call_id", nullable = false)
+    private Call call;
 
     public void computeBottomPrice(MarketTomorrowDto marketTomorrow) {
         //TODO implement method to compute market price

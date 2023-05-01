@@ -12,6 +12,9 @@ import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -44,4 +47,6 @@ public class ProductionGroup {
     @JoinColumn(name = "power_agreement_id", nullable = false, unique = true)
     private PowerAgreement powerAgreement;
 
+    @OneToMany(mappedBy = "productionGroup", orphanRemoval = true)
+    private List<BlockProducer> blockProducerForecast = new ArrayList<>();
 }
