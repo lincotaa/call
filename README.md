@@ -41,7 +41,7 @@ For the "prod" profile, a local PostGreSQL instance is required (version 10+).
 
 #### Class Diagram of the Demo Version
 Here comes the Demo class diagram:
-https://github.com/lincotaa/call/blob/feature/call_for_tenders/src/main/resources/images/call_service_classes_diagram.png?raw=true)
+![alt text](https://github.com/lincotaa/call/blob/feature/call_for_tenders/src/main/resources/images/call_service_classes_diagram.png?raw=true)
 
 #### Simple repartition key for Demo
 Min power agreement is what is to be given to I and II reserves at least. Max is the max power to be sold to those reserves for
