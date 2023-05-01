@@ -37,7 +37,7 @@ to a certain list of ROLEs are commented out.
 
 #### Data Storage
 As the Demo is expected to run with a simple JVM, H2 database is used for the demo profile "devdd". 
-For the "prod" profile, a local PostGreSQL instance is required (version 10+).
+For the "prod" profile, a local PostGreSQL instance is required (version>=15.2).
 
 #### Class Diagram of the Demo Version
 Here comes the Demo class diagram:
