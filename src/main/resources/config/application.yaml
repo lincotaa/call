@@ -22,3 +22,9 @@ springdoc:
 logging:
   level:
     root: WARN
+
+application:
+  repartitionkey:
+    mode: demo
+    bottompricemargin: 0
+

@@ -6,8 +6,8 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Getter
 @Setter
@@ -19,18 +19,11 @@ public class Reserve {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @NotNull(message = "Name is mandatory")
+    @NotNull(message = "Description is mandatory")
     @NotBlank
-    @Size(min = 2, message = "Name is too short. Min string length is 2 characters")
-    @Size(max = 100, message = "Name is too long. Max string length is 100 characters")
-    private String name;
-
-    @Transient
-    private List<BlockAvailable> availableBlocks;
-
-    @Transient
-    private List<BlockAllocated> allocatedBlocks;
-
-
+    @Size(min = 2, message = "Description is too short. Min string length is 2 characters")
+    @Size(max = 100, message = "Description is too long. Max string length is 100 characters")
+    @JdbcTypeCode(SqlTypes.VARCHAR)
+    private String description;
 
 }

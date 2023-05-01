@@ -8,6 +8,9 @@ Please have a JVM of Java 17 Temurin installed onto your machine prior to runnin
 If you don't have it yet, you can download the correct version for your OS from 
 [Adoptium Website](https://adoptium.net/temurin/releases/).
 
+When running the "prod" profile, please ensure you have a PostgreSQL service up and running on your
+computer, on the default port 5432.
+
 
 ## How to run the app
 Download the last release onto your machine, then run:
@@ -23,14 +26,33 @@ Before running the app locally with the previous command.
 
 ## Documentation
 ### Call Service V0.0.1 - Demo
+#### Missing features compared to Target App
 In this demo version, all RTE market information are not persisted (transient purely).
 Also, no authentication is needed since User management is supposed to be handled by the User Service, and delivered by 
-the Gateway. Until the fact, @Secured annotation on the endpoints of the controllers are commented out.
-As the Demo is expected to run with a simple JVM, H2 database is used for the demo profile "dev". 
+the Gateway. The Swagger page, now available directly on this app without authentication, will have to be moved to the 
+Gateway and concatenated to other App Swaggers to be accessed authenticated as a single common Swagger page (content would then
+depend on the user ROLE). Until the fact, @Secured annotation on the endpoints of the controllers to restrict its use 
+to a certain list of ROLEs are commented out.
+
+
+#### Data Storage
+As the Demo is expected to run with a simple JVM, H2 database is used for the demo profile "devdd". 
 For the "prod" profile, a local PostGreSQL instance is required (version 10+).
 
-Demo-version 0.0.1 classes diagram:
+#### Class Diagram of the Demo Version
+Here comes the Demo class diagram:
 https://github.com/lincotaa/call/blob/feature/call_for_tenders/src/main/resources/images/call_service_classes_diagram.png?raw=true)
+
+#### Simple repartition key for Demo
+Min power agreement is what is to be given to I and II reserves at least. Max is the max power to be sold to those reserves for
+the group of production. In case of pp1 or pp2 to 'true', then I and II are to receive the maximum power agreed if
+possible. If not, they will only be garanted to receive the bare min power agreed with RTE. RR market will be served to 
+the rest.
+
+For the bottom price to sell the power for in the Call Offers, it is considered to be the max value of SPOT and 
+productionCost during this step. 
+
+In the future, a parametrizable margin (cf properties file) might be applied (ex : +10% on the max value).
 
 ### Target
 #### Global architecture
@@ -42,5 +64,19 @@ At least, 4 other services are needed:
 the [RTE DATA API](https://data.rte-france.com/).
 
 ![alt text](https://github.com/lincotaa/call/blob/feature/call_for_tenders/src/main/resources/images/global_architecture.png?raw=true)
+
+
 #### Sequence diagram
+Hereafter, the sequence diagram of the processes to take place for the call of tenders generation and access:
+
 ![alt text](https://github.com/lincotaa/call/blob/feature/call_for_tenders/src/main/resources/images/sequence_diagram.png?raw=true)
+
+#### Repartition key for power offering optimization
+Not specified yet...
+
+
+#### Classes diagram of RTE Service
+This is a first version of the classed diagram relative to the RTE Service:
+
+![alt text](https://github.com/lincotaa/call/blob/feature/call_for_tenders/src/main/resources/images/rte_service_classes_diagram.png?raw=true)
+

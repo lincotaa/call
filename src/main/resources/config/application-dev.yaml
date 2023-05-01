@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:file:./db/demodb;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:file:./src/main/resources/db/call.mv.db;DB_CLOSE_ON_EXIT=FALSE
     username: call
     password: test
     driverClassName: org.h2.Driver
@@ -9,3 +9,7 @@ logging:
   level:
     root: WARN
     fr.agregio: TRACE
+
+application:
+  repartitionkey:
+    bottompricemargin: 5
