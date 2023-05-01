@@ -5,8 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @AllArgsConstructor
@@ -24,6 +27,10 @@ public class Call {
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "reserve_id", nullable = false)
     private Reserve reserve;
+
+    @Column(name = "day", nullable = false)
+    @JdbcTypeCode(SqlTypes.DATE)
+    private Date day;
 
     @OneToMany(mappedBy = "call", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BlockReserve> blockReserves = new ArrayList<>();
