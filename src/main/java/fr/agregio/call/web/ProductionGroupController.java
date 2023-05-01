@@ -1,10 +1,12 @@
 package fr.agregio.call.web;
 
+import fr.agregio.call.model.dto.ProductionGroupDto;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +25,7 @@ public interface ProductionGroupController {
 
     /**
      * Creating a new GroupOfProduction entity
-     * @param productionGroupDTO the group of production to be created, without an id specified
+     * @param productionGroupDto the group of production to be created, without an id specified
      * @return the persisted GroupOfProduction entity
      */
     //TODO add correct JSON body formatting to description
@@ -45,5 +47,9 @@ public interface ProductionGroupController {
     })
 //    @Secured({"ROLE_ADMIN"})
     @PostMapping("/producers")
-    ResponseEntity<ProductionGroupDTO> create(@Valid @RequestBody ProductionGroupDTO productionGroupDTO);
+    ResponseEntity<ProductionGroupDto> create(@Valid @RequestBody ProductionGroupDto productionGroupDto);
+
+    ResponseEntity<ProductionGroupDto> update(@Valid @RequestBody ProductionGroupDto productionGroupDto);
+
+    ResponseEntity<String> delete(@Valid @RequestBody ProductionGroupDto productionGroupDto);
 }
